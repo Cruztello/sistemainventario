@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Agregar la biblioteca de iconos de Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/bootstrap-icons.min.css" integrity="sha512-8j6U1b6u+7GGNNJp6u9f5C5E18m5mDQ2e6G1M7yU6bDEuV7WeC6i9u5RY5K5E5uVwQGirb5uOblE2SqrKjiz3A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div>
+    <!-- Esta seccion es el navbar se uso bootstrap para optimizar el diseño y añadir los desplegables-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+        <div class="container-fluid">
+            <a href="/index.html" class="d-flex align-items-center text-light text-decoration-none">
+                <img src="../../assets/img/logo_itb.png" width="40" height="40" class="me-2" viewBox="0 0 118 94" alt="">
+                <span class="fs-4">Sistema Inventario</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menú</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <!-- 1er elemento -->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../../index.html">Inicio</a>
+                        </li>
+                        <!-- Desplegable Personas -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Personas
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../../view/Personas/jefebodega.html">Jefe Bodega</a></li>
+                                <li><a class="dropdown-item" href="../../view/Personas/jefecompras.html">Jefe Compras</a></li>
+                                <li><a class="dropdown-item" href="../../view/Personas/vendedor.html">Vendedor</a></li>
+                            </ul>
+                        </li>
+                        <!-- Desplegable Documentos-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Documentos
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../../view/Documentos/pedido.html">Pedidos</a></li>
+                                <li><a class="dropdown-item" href="../../view/Documentos/reciboingreso.html">Recibo Ingreso</a></li>
+                                <li><a class="dropdown-item" href="../..//view/Documentos/factclie.html">Factura Venta</a></li>
+                                <li><a class="dropdown-item" href="../../view/Documentos/reciboegreso.html">Recibo Egreso</a></li>
+                            </ul>
+                        </li>
+                        <!-- 1er elemento -->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../../view/Productos/productos.html">Inventario</a>
+                        </li>
+                        <!--  elemento bodega-->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../../view/Bodega/bodega.html">Bodega</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>   
+    <!-- Aqui comienza el contenido del sistema-->
+    <div>
+        <h2>Crear Pedido</h2>
+        <form action="">
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="Marca" class="form-label">Jefe de Bodega:</label>
+                    <select class="form-select" aria-label="Disabled select example">
+                        <option selected>Seleccionar Jefe de Bodega</option>
+                        <option value="1">Angel Cruz</option>
+                        <option value="2">Manuel Orellana</option>
+                        <option value="3">Victor Pezo</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="Marca" class="form-label">Jefe de Compras:</label>
+                    <select class="form-select" aria-label="Disabled select example">
+                        <option selected>Seleccionar Jefe de Compras</option>
+                        <option value="1">Angel Orellana</option>
+                        <option value="2">Manuel Pezo</option>
+                        <option value="3">Victor Cruz</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-5">
+                    <label for="Fecha"class="form-label">Fecha</label>
+                    <input type="date" id="Fecha"  name="Fecha"  class="form-control" style="border: none;">
+                </div>
+                <div class="mb-3 col-4">
+                    <label for="Marca" class="form-label">Estado:</label>
+                    <select class="form-select" aria-label="Disabled select example">
+                        <option selected value="1">Activo</option>
+                        <option value="2">Inactivo</option>
+                        <option value="3">Anulado</option>
+                        <option value="4">Realizado</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modalDetPedido">Agregar Detalle</button>
+                
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">PRODUCTO</th>
+                        <th scope="col">CANTIDAD</th>
+                        <th scope="col">OPCIONES</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="table-primary">
+                        <td>TECLADO</td>
+                        <td>5</td> 
+                        <td class="col-2">
+                            <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#modalDelPedido">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="table-danger">
+                        <td>LAPTOP</td>    
+                        <td>5</td> 
+                        <td class="col-2">
+                            <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#modalDelPedido">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="table-info">
+                        <td>PROYECTOR</td>
+                        <td>5</td> 
+                        <td class="col-2">
+                            <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#modalDelPedido">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a type="submit" class="btn btn-primary" href='pedido.html'>Guardar Documento</a>
+        </form>
+    </div>
+    
+    <!-- Modal Detalle Pedido-->
+    <div class="modal fade" id="modalDetPedido" tabindex="-1" aria-labelledby="modalDetPedidoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalDetPedidoLabel">Añadir Detalle</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="Marca" class="form-label">Producto:</label>
+                            <select class="form-select" aria-label="Disabled select example">
+                                <option selected>Seleccionar Producto</option>
+                                <option value="1">Mouse</option>
+                                <option value="2">Pizarron</option>
+                                <option value="3">Proyector</option>
+                                <option value="4">Laptop</option>
+                                <option value="5">Escritorio</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tipo" class="form-label">Cantidad:</label>
+                            <input type="number" class="form-control" id="tipo" aria-describedby="tipo">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
